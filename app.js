@@ -10,8 +10,8 @@
 
 // package.json - manifest file(stores important info about project/package)
 // manual approach (create package.json in the root, create properties etc)
-// npm init (step by step, press enter to skip)
 // npm i -y (everything default)
+// npm init (step by step, press enter to skip)
 
 const _lodash = require("lodash");
 
