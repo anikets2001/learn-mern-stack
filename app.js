@@ -3,7 +3,7 @@
 //   writeFileSync('./content/big.txt', `Hello World ${i}\n`, { flag: "a" });
 // }
 
-// read stream from file
+// read stream from 
 const {createReadStream} = require('fs');
 
 const stream = createReadStream('./content/big.txt', {highWaterMark: 9000, encoding: 'utf8'});
