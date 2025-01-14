@@ -1,12 +1,15 @@
-// const { writeFileSync } = require("fs");
-// for (let i = 0; i < 100; i++) {
-//   writeFileSync('./content/big.txt', `Hello World ${i}\n`, { flag: "a" });
-// }
+const http = require("http");
 
-// read stream from 
-const {createReadStream} = require('fs');
+const server = http.createServer((req, res) => {
+  if (req.url === "/") {
+    res.end("homepage");
+  } else if (req.url === "/about") {
+    res.end("about page");
+  } else {
+    res.end(`<h1>Error page</h1>`);
+  }
+});
 
-const stream = createReadStream('./content/big.txt', {highWaterMark: 9000, encoding: 'utf8'});
-stream.on('data', (result)=> {
-    console.log(result)
+server.listen(5000, ()=> {
+    console.log('starting server....')
 })
